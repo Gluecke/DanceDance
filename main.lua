@@ -1,4 +1,4 @@
-require "CiderDebugger";
+
 -- 
 -----------------------------------------------------------------------------------------
 --
@@ -33,7 +33,7 @@ local screenY = display.contentHeight;
 local doDanceOptions = {
                     x = screenX/2,
                     y = screenY/1.2,
-                    width = screenX/5,
+                    width = screenX/4,
                     label = "Dance!"
                         };
                         
