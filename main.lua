@@ -26,13 +26,18 @@ local widgets = require "widget";
 local screenX = display.contentWidth;
 local screenY = display.contentHeight;
 
---options
+ 
+------------------------
+--option tables
+--widget options
 local doDanceOptions = {
                     x = screenX/2,
                     y = screenY/1.2,
                     width = screenX/5,
                     label = "Dance!"
                         };
+                        
+--sprite sheet options
 local danceSheetOptions = {
 	-- Required params
 	frames = {
@@ -60,9 +65,6 @@ for frow = 1,15 do
 	end
 end
 
---spritesheet
-local danceSpriteSheet = graphics.newImageSheet("Images/dancers.png", danceSheetOptions);
-
 --create dance sprite sequence data
 local danceSpriteSeq = {
                 name = "dancing",
@@ -74,16 +76,21 @@ local danceSpriteSeq = {
                 }
 
 ------------------------
---display elements
+--display elements 
+
+--spritesheet
+local danceSpriteSheet = graphics.newImageSheet("Images/dancers.png", danceSheetOptions);
+
 local danceSpriteAnim = display.newSprite(danceSpriteSheet, danceSpriteSeq);
 
+--location of the sprite animation
 danceSpriteAnim.x = screenX / 2;
 danceSpriteAnim.y = screenY / 4;
 
 
 
 ------------------------
---functions
+--forward function declarations
 local startDance;
 
 
@@ -92,6 +99,8 @@ local startDance;
 local doDance = widgets.newButton(doDanceOptions);
 
 
+------------------------
+--function bodies
 startDance = function ( event )
     
     --only play if they hold their finger down
